@@ -9,7 +9,7 @@ const getAll = () => {
     console.log('Getting all notes');
 }
 
-const readNote = (title) => {
+const getNote = (title) => {
     console.log('Reading note: ', title);
 }
 
@@ -21,6 +21,6 @@ const removeNote = (title) => {
 module.exports = {
     addNote,
     getAll,
-    readNote,
+    getNote,
     removeNote
 };
