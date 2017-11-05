@@ -22,7 +22,7 @@ const addNote = (title, body) => {
         body
     };
 
-    var duplicateNotes = notes.filter((note) => note.title === title)
+var duplicateNotes = notes.filter((note) => note.title === title)
 
     if (duplicateNotes.length === 0) {
         notes.push(note);
@@ -41,7 +41,11 @@ const getNote = (title) => {
 }
 
 const removeNote = (title) => {
-    console.log('Removing note: ', title);
+    var notes = fetchNotes();
+    var filteredNotes = notes.filter((note) => note.title !== title);
+    saveNotes(filteredNotes);
+   
+    return notes.length !== filteredNotes.length;
 }
 
 
